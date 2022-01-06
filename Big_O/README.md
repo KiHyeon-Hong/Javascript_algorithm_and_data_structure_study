@@ -29,3 +29,5 @@
 - splice: N
 - sort: NlogN
 - forEach/map/filter/reduce: N
+
+- 배열은 끝부분에서 삽입, 삭제가 가장 이상적이다.
