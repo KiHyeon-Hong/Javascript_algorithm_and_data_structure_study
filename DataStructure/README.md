@@ -21,3 +21,8 @@
 - HEAD, TAIL, LENGTH
 - data, next
 - 삽입과 삭제에 유리하다
+
+- insert: o(1)
+- removal: it dependes o(1) or o(n)
+- searching: o(n)
+- access: 0(n)
