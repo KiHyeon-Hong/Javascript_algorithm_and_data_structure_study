@@ -78,10 +78,25 @@ class SingleLinkedList {
     return this;
   }
   // 해당 위치의 요소를 출력한다.
-  get() {}
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+
+    let counter = 0;
+    let current = this.head;
+
+    while (counter !== index) {
+      current = current.next;
+      counter++;
+    }
+
+    return current;
+  }
+
+  set() {}
 }
 
 let list = new SingleLinkedList();
+/*
 list.push('Hi');
 list.push('Hello');
 list.push('world');
@@ -102,10 +117,18 @@ console.log(list.shift());
 console.log(list.shift());
 console.log(list.shift());
 console.log(list.shift());
-console.log(list.shift());
+*/
 
 list.unshift('Hi');
 list.push('Hello');
 list.push('world');
 list.push('!');
 list.unshift('Welcome');
+
+console.log(list.get(0).val);
+console.log(list.get(0).val);
+console.log(list.get(1).val);
+console.log(list.get(2).val);
+console.log(list.get(3).val);
+console.log(list.get(4).val);
+console.log(list.get(5));
