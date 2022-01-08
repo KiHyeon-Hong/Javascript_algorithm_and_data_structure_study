@@ -15,5 +15,5 @@ function insertSort(arr) {
   return arr;
 }
 
-let orig = [3, 2, 4, 5, 1, 6, 10, 10, 0, 3, 7, 6, 4, 3];
+let orig = [3, 2, 4, 5, 10, 10, 1, 6, 10, 10, 0, -1, 7, 6, 4, 3];
 console.log(insertSort(orig));

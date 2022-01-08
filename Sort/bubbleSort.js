@@ -30,5 +30,9 @@ function bubbleSortUpgrade(arr) {
   return arr;
 }
 
+let data = Array.apply(null, { length: 100000 }).map((v) => {
+  return parseInt(Math.random() * 100000);
+});
+
 let orig = [6, 3, 9, 8, 4, 1, 10, 3, 7, 9, 4, 3, 2, 6, 4, 1, 9, 0];
-console.log(bubbleSortUpgrade(orig));
+console.log(bubbleSortUpgrade(data));
