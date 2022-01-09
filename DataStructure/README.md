@@ -26,3 +26,7 @@
 - removal: it dependes o(1) or o(n)
 - searching: o(n)
 - access: 0(n)
+
+## Doubly linked list
+
+-
