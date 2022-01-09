@@ -29,4 +29,9 @@
 
 ## Doubly linked list
 
--
+- insert: o(1)
+- removal: o(1)
+- searching: o(n)
+- access: 0(n)
+
+- Technically searching is o(n/2), but that's still o(n)
