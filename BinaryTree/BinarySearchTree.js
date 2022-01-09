@@ -63,6 +63,7 @@ class BinarySearchTree {
     return current;
   }
 
+  // 너비 우선 탐색
   BFS() {
     let data = [],
       queue = [],
@@ -79,6 +80,48 @@ class BinarySearchTree {
 
     return data;
   }
+
+  // 전위 탐색
+  DFSPreOrder() {
+    let data = [];
+
+    function traverse(node) {
+      data.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+
+    traverse(this.root);
+    return data;
+  }
+
+  // 후위 탐색
+  DFSPostOrder() {
+    let data = [];
+
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      data.push(node.value);
+    }
+
+    traverse(this.root);
+    return data;
+  }
+
+  // 중위 탐색
+  DFSInOrder() {
+    let data = [];
+
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      data.push(node.value);
+      if (node.right) traverse(node.right);
+    }
+
+    traverse(this.root);
+    return data;
+  }
 }
 
 let binarySearchTree = new BinarySearchTree();
@@ -89,7 +132,10 @@ binarySearchTree.insert(3);
 binarySearchTree.insert(8);
 binarySearchTree.insert(20);
 
-console.log(binarySearchTree.find(10));
-console.log(binarySearchTree.find(9));
+// console.log(binarySearchTree.find(10));
+// console.log(binarySearchTree.find(9));
 
 console.log(binarySearchTree.BFS());
+console.log(binarySearchTree.DFSPreOrder());
+console.log(binarySearchTree.DFSPostOrder());
+console.log(binarySearchTree.DFSInOrder());
