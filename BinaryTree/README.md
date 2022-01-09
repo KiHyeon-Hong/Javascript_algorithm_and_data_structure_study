@@ -5,3 +5,9 @@
 
 - insert: o(log n)
 - searching: o(log n)
+
+# BSF
+
+- 큐를 이용
+- 큐에 값이 존재한다면, 루프를 돌리기
+-
