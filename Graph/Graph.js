@@ -26,6 +26,76 @@ class Graph {
 
     delete this.adjacencyList[vertex];
   }
+
+  // DFS 재귀 이용
+  depthFirstRecursive(start) {
+    let result = [];
+    let visited = {};
+    const adjacencyList = this.adjacencyList;
+
+    (function dfs(vertex) {
+      if (!vertex) return null;
+
+      visited[vertex] = true;
+      result.push(vertex);
+
+      adjacencyList[vertex].forEach((neighbor) => {
+        if (!visited[neighbor]) {
+          return dfs(neighbor);
+        }
+      });
+    })(start);
+
+    return result;
+  }
+
+  // DFS 스택 이용
+  depthFirstIterative(start) {
+    let stack = [start];
+    let result = [];
+    let visited = {};
+    let currentVertex;
+
+    visited[start] = true;
+
+    while (stack.length) {
+      currentVertex = stack.pop();
+      result.push(currentVertex);
+
+      this.adjacencyList[currentVertex].forEach((neighbor) => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          stack.push(neighbor);
+        }
+      });
+    }
+
+    return result;
+  }
+
+  // BFS
+  breadthFirst(start) {
+    let queue = [start];
+    let result = [];
+    let visited = {};
+    let currentVertex;
+
+    visited[start] = true;
+
+    while (queue.length) {
+      currentVertex = queue.shift();
+      result.push(currentVertex);
+
+      this.adjacencyList[currentVertex].forEach((neighbor) => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          queue.push(neighbor);
+        }
+      });
+    }
+
+    return result;
+  }
 }
 
 let graph = new Graph();
@@ -63,3 +133,8 @@ graph.addEdge('C', 'E');
 graph.addEdge('D', 'E');
 graph.addEdge('D', 'F');
 graph.addEdge('E', 'F');
+
+console.log(graph.adjacencyList);
+console.log(graph.depthFirstRecursive('A'));
+console.log(graph.depthFirstIterative('A'));
+console.log(graph.breadthFirst('A'));
