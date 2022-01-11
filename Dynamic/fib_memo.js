@@ -1,4 +1,4 @@
-function fib(n, memo = []) {
+function fib(n, memo = [undefined, 1, 1]) {
   if (memo[n] !== undefined) return memo[n];
 
   if (n <= 2) return 1;
