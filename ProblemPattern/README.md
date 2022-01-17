@@ -1,7 +1,5 @@
 ## Frequency Counter
 
-- s
-
 ## Multiple Pointer
 
 ## Sliding Window
