@@ -27,22 +27,21 @@ function validAnagram(first, second) {
 
 // {a: 0, n: 0, g: 0, r: 0, m: 0,s:1}
 validAnagram('anagrams', 'nagaramm');
-
 /*
-  if(str1.length !== str2.length) return false;
-  
-  let s1 = {};
-  let s2 = {};
-  
-  str1.split('').map((v) => {
-     s1[v] = ++s1[v] || 1; 
-  });
-  str2.split('').map((v) => {
-     s2[v] = ++s2[v] || 1; 
-  });
-  
-  for (let key in s1) {
-      if(!(key in s2) || s1[key] !== s2[key]) return false;
-  }
-  return true;
+if (str1.length !== str2.length) return false;
+
+let s1 = {};
+let s2 = {};
+
+str1.split('').map((v) => {
+  s1[v] = ++s1[v] || 1;
+});
+str2.split('').map((v) => {
+  s2[v] = ++s2[v] || 1;
+});
+
+for (let key in s1) {
+  if (!(key in s2) || s1[key] !== s2[key]) return false;
+}
+return true;
 */
